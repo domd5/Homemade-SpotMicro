@@ -64,12 +64,29 @@ while end:
         kit.servo[5].angle = 20
         kit.servo[8].angle = 150
         kit.servo[11].angle = 30
+    
     if text == 'f':
         print("High Five")
         kit.servo[0].angle = 100
         kit.servo[1].angle = 150
         kit.servo[2].angle = 120
-
+        
+        
+    if text == 'w':
+        print("Disengaging")
+        kit.servo[0].angle = None
+        kit.servo[1].angle = None
+        kit.servo[2].angle = None
+        kit.servo[3].angle = None
+        kit.servo[4].angle = None
+        kit.servo[5].angle = None
+        kit.servo[6].angle = None
+        kit.servo[7].angle = None
+        kit.servo[8].angle = None
+        kit.servo[9].angle = None
+        kit.servo[10].angle = None
+        kit.servo[11].angle = None
+        
     if text == 'q':
         print("Ending Program")
         end = False
