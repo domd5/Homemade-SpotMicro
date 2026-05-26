@@ -71,7 +71,7 @@ while end:
         kit.servo[9].angle = 90
         kit.servo[10].angle = 180
         kit.servo[11].angle = 30
-        
     if text == 'q':
         print("Ending Program")
         end = False
+
