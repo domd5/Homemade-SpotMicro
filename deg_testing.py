@@ -1,5 +1,4 @@
 from adafruit_servokit import ServoKit
-import keyboard
 
 end = True
 kit = ServoKit(channels=16)

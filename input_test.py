@@ -7,7 +7,7 @@ print("Initializing Servos")
 
 while end:
     text = input()
-    if keyboard.is_pressed('f'):
+    if text == 'f':
         print("Testing Sholders")
         kit.servo[0].angle = 90
         kit.servo[3].angle = 90
@@ -21,9 +21,9 @@ while end:
     if text == 'b':
         print("single leg stand other side")
         kit.servo[0].angle = 90
-        kit.servo[1].angle = 60
-        kit.servo[2].angle = 170
-    if keyboard.is_pressed('h'):
+        kit.servo[1].angle = 45
+        kit.servo[2].angle = 180
+    if text == 'h':
         print("All Legs Stand")
         #front
         kit.servo[0].angle = 90
@@ -72,6 +72,6 @@ while end:
         kit.servo[10].angle = 180
         kit.servo[11].angle = 30
         
-    if keyboard.is_pressed('esc'):
+    if text == 'q':
         print("Ending Program")
         end = False
