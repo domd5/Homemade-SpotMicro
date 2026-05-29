@@ -7,7 +7,7 @@ print("Initializing Servos")
 
 while end:
     text = input()
-    if text == 'h':
+    if text == 'e':
         print("Standing")
         #top
         kit.servo[0].angle = 90
@@ -24,7 +24,7 @@ while end:
         kit.servo[5].angle = 100
         kit.servo[8].angle = 70
         kit.servo[11].angle = 120
-    if text == 't':
+    if text == 'z':
         print("Sitting")
         #back
         #top
@@ -71,8 +71,20 @@ while end:
         kit.servo[1].angle = 150
         kit.servo[2].angle = 120
         
+    #if text == 'w':
+        #print("Walking")
+        #text = e 
+        #fl
+        #kit.servo[3].angle = 90
+        #kit.servo[4].angle = 45
+        #kit.servo[5].angle = 70
+        #br
+        #kit.servo[6].angle = 90
+        #kit.servo[7].angle = 0
+        #kit.servo[8].angle = 130
+
         
-    if text == 'w':
+    if text == '1':
         print("Disengaging")
         kit.servo[0].angle = None
         kit.servo[1].angle = None
@@ -85,8 +97,7 @@ while end:
         kit.servo[8].angle = None
         kit.servo[9].angle = None
         kit.servo[10].angle = None
-        kit.servo[11].angle = None
-        
+        kit.servo[11].angle = None 
     if text == 'q':
         print("Ending Program")
         end = False
