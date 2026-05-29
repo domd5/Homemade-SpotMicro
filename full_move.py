@@ -1,9 +1,27 @@
 from adafruit_servokit import ServoKit
 import keyboard
+import time
 
 end = True
 kit = ServoKit(channels=16)
 print("Initializing Servos")
+
+# Helper: move one leg through a step cycle
+def step_leg(kit, top, mid, bot, top_stand, mid_stand, bot_stand, forward=True):
+    swing_angle = top_stand + (15 if forward else -15)
+    
+    # Lift
+    kit.servo[mid].angle = mid_stand - 20  # raise thigh
+    time.sleep(0.15)
+    
+    # Swing forward
+    kit.servo[top].angle = swing_angle
+    time.sleep(0.15)
+    
+    # Plant
+    kit.servo[mid].angle = mid_stand
+    kit.servo[bot].angle = bot_stand
+    time.sleep(0.15)
 
 while end:
     text = input()
@@ -82,6 +100,18 @@ while end:
         #kit.servo[6].angle = 90
         #kit.servo[7].angle = 0
         #kit.servo[8].angle = 130
+
+    if text == 'a':
+        print("Walking Forward")
+        # Standing angles from your 'h' command:
+        # FL: top=0,mid=1,bot=2  |  FR: top=3,mid=4,bot=5
+        # BL: top=6,mid=7,bot=8  |  BR: top=9,mid=10,bot=11
+
+        for _ in range(4):  # 4 step cycles
+            step_leg(kit, 0, 1, 2,  90, 45, 70)   # Front-Left
+            step_leg(kit, 9, 10, 11, 90, 120, 120) # Back-Right
+            step_leg(kit, 3, 4, 5,  90, 120, 100)  # Front-Right
+            step_leg(kit, 6, 7, 8,  90, 45, 70)    # Back-Left
 
         
     if text == '1':
