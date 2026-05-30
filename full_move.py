@@ -121,18 +121,19 @@ while end:
             kit.servo[8].angle = 70
             time.sleep(0.1)
             #2nd 2 forward
-            #kit.servo[1].angle = 95
-            #kit.servo[10].angle = 70
+            kit.servo[1].angle = 95
+            kit.servo[10].angle = 70
             #2nd 2 down
-            #kit.servo[2].angle = 170
-            #kit.servo[11].angle = 20
-            #time.sleep(0.1)
+            kit.servo[2].angle = 170
+            kit.servo[11].angle = 20
+            time.sleep(0.1)
             #1st 2 up
-            #kit.servo[5].angle = 70
-            #kit.servo[8].angle = 100
+            kit.servo[5].angle = 70
+            kit.servo[8].angle = 100
             #2nd 2 back
-            #kit.servo[2].angle = 170
-            #kit.servo[11].angle = 120
+            kit.servo[2].angle = 170
+            kit.servo[11].angle = 120
+            time.sleep(0.1)
 
 
     if text == 'a':
