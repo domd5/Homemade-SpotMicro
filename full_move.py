@@ -131,7 +131,9 @@ while end:
             kit.servo[5].angle = 70
             kit.servo[8].angle = 100
             #2nd 2 back
-            kit.servo[2].angle = 170
+            kit.servo[1].angle = 45
+            kit.servo[2].angle = 70
+            kit.servo[10].angle = 120
             kit.servo[11].angle = 120
             time.sleep(0.1)
 
