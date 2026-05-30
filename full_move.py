@@ -4,6 +4,7 @@ import time
 
 end = True
 stand = False
+count = 0
 kit = ServoKit(channels=16)
 print("Initializing Servos")
 
@@ -23,12 +24,8 @@ def step_leg(kit, top, mid, bot, top_stand, mid_stand, bot_stand, forward=True):
    # kit.servo[mid].angle = mid_stand
     #kit.servo[bot].angle = bot_stand
     time.sleep(0.15)
-
-while end:
-    text = input()
-    if text == 'e':
-        print("Standing")
-        #top
+def stand():
+    #top
         kit.servo[0].angle = 90
         kit.servo[3].angle = 90
         kit.servo[6].angle = 90
@@ -44,6 +41,12 @@ while end:
         kit.servo[8].angle = 70
         kit.servo[11].angle = 120
         stand = True
+
+while end:
+    text = input()
+    if text == 'e':
+        print("Standing")
+        stand()
     if text == 'z':
         print("Sitting")
         #back
@@ -91,17 +94,44 @@ while end:
         kit.servo[1].angle = 150
         kit.servo[2].angle = 120
 
-    if text == 'w' and stand == True:
+    if text == 'w':
         print("Walking")
+        count = int(input("Number of steps: "))
+        stand()
         kit.servo[5].angle = 70
         kit.servo[8].angle = 100
         time.sleep(0.2)
         #start loop
-        kit.servo[4].angle = 70
-        kit.servo[7].angle = 95
+        for steps in range(count):
+            #1st 2 forward
+            kit.servo[4].angle = 70
+            kit.servo[7].angle = 95
+            #1st 2 down
+            kit.servo[5].angle = 140
+            kit.servo[8].angle = 30
+            time.sleep(0.1)
+            #2nd 2 up
+            kit.servo[2].angle = 100
+            kit.servo[11].angle = 90
+            time.sleep(0.1)
+            #1st 2 back
+            kit.servo[5].angle = 100
+            kit.servo[8].angle = 70
+            time.sleep(0.1)
+            #2nd 2 forward
+            kit.servo[1].angle = 95
+            kit.servo[10].angle = 70
+            #2nd 2 down
+            kit.servo[2].angle = 170
+            kit.servo[11].angle = 20
+            time.sleep(0.1)
+            #1st 2 up
+            kit.servo[5].angle = 70
+            kit.servo[8].angle = 100
+            #2nd 2 back
+            kit.servo[2].angle = 170
+            kit.servo[11].angle = 120
 
-        kit.servo[5].angle = 140
-        kit.servo[8].angle = 30
 
     if text == 'a':
         print("Walking Forward")
