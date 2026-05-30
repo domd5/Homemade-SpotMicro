@@ -136,6 +136,7 @@ while end:
             kit.servo[10].angle = 120
             kit.servo[11].angle = 120
             time.sleep(0.1)
+        stand()
 
 
     if text == 'a':
