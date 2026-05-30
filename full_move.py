@@ -15,12 +15,12 @@ def step_leg(kit, top, mid, bot, top_stand, mid_stand, bot_stand, forward=True):
     time.sleep(0.15)
     
     # Swing forward
-    kit.servo[top].angle = swing_angle
+    #kit.servo[top].angle = swing_angle
     time.sleep(0.15)
     
     # Plant
-    kit.servo[mid].angle = mid_stand
-    kit.servo[bot].angle = bot_stand
+   # kit.servo[mid].angle = mid_stand
+    #kit.servo[bot].angle = bot_stand
     time.sleep(0.15)
 
 while end:
