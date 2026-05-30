@@ -89,13 +89,13 @@ while end:
         kit.servo[1].angle = 150
         kit.servo[2].angle = 120
         
-    #if text == 'w':
-        #print("Walking")
-        #text = e 
+    if text == 'w':
+        print("Walking")
+        text = e 
         #fl
-        #kit.servo[3].angle = 90
-        #kit.servo[4].angle = 45
-        #kit.servo[5].angle = 70
+        kit.servo[3].angle = 90
+        kit.servo[4].angle = 45
+        kit.servo[5].angle = 70
         #br
         #kit.servo[6].angle = 90
         #kit.servo[7].angle = 0
