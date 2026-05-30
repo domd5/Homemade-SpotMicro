@@ -96,20 +96,20 @@ while end:
 
     if text == 'c':
         print("Cocking Head")
-        #front stand pos
-        kit.servo[0].angle = 90
-        kit.servo[3].angle = 90
-        kit.servo[1].angle = 45
-        kit.servo[4].angle = 120
-        kit.servo[2].angle = 70
-        kit.servo[5].angle = 100
-        
+        #front
+        kit.servo[0].angle = 110
+        kit.servo[3].angle = 125
+        kit.servo[1].angle = 50
+        kit.servo[4].angle = 105
+        kit.servo[2].angle = 55
+        kit.servo[5].angle = 160
+
         kit.servo[6].angle = 90
-        kit.servo[9].angle = 90
+        kit.servo[9].angle = 130
         kit.servo[7].angle = 0
-        kit.servo[10].angle = 130
-        kit.servo[8].angle = 90
-        kit.servo[11].angle = 80
+        kit.servo[10].angle = 180
+        kit.servo[8].angle = 105
+        kit.servo[11].angle = 100
 
     if text == 'w':
         print("Walking")
