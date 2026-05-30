@@ -3,21 +3,22 @@ import keyboard
 import time
 
 end = True
+stand = False
 kit = ServoKit(channels=16)
 print("Initializing Servos")
 
 # Helper: move one leg through a step cycle
 def step_leg(kit, top, mid, bot, top_stand, mid_stand, bot_stand, forward=True):
     swing_angle = top_stand + (15 if forward else -15)
-    
+
     # Lift
     kit.servo[mid].angle = mid_stand - 20  # raise thigh
     time.sleep(0.15)
-    
+
     # Swing forward
     #kit.servo[top].angle = swing_angle
     time.sleep(0.15)
-    
+
     # Plant
    # kit.servo[mid].angle = mid_stand
     #kit.servo[bot].angle = bot_stand
@@ -42,6 +43,7 @@ while end:
         kit.servo[5].angle = 100
         kit.servo[8].angle = 70
         kit.servo[11].angle = 120
+        stand = True
     if text == 'z':
         print("Sitting")
         #back
@@ -82,23 +84,18 @@ while end:
         kit.servo[5].angle = 20
         kit.servo[8].angle = 150
         kit.servo[11].angle = 30
-    
+
     if text == 'f':
         print("High Five")
         kit.servo[0].angle = 100
         kit.servo[1].angle = 150
         kit.servo[2].angle = 120
-        
-    if text == 'w':
-        print("Walking") 
-        #fl
-        kit.servo[3].angle = 90
-        kit.servo[4].angle = 45
+
+    if text == 'w' and stand == True:
+        print("Walking")
         kit.servo[5].angle = 70
-        #br
-        #kit.servo[6].angle = 90
-        #kit.servo[7].angle = 0
-        #kit.servo[8].angle = 130
+        kit.servo[4].angle = 70
+        kit.servo[5].angle = 140
 
     if text == 'a':
         print("Walking Forward")
@@ -112,7 +109,7 @@ while end:
             step_leg(kit, 3, 4, 5,  90, 120, 100)  # Front-Right
             step_leg(kit, 6, 7, 8,  90, 45, 70, False)    # Back-Left
 
-        
+
     if text == '1':
         print("Disengaging")
         kit.servo[0].angle = None
