@@ -108,10 +108,10 @@ while end:
         # BL: top=6,mid=7,bot=8  |  BR: top=9,mid=10,bot=11
 
         for _ in range(4):  # 4 step cycles
-            step_leg(kit, 0, 1, 2,  90, 45, 70)   # Front-Left
+            step_leg(kit, 0, 1, 2,  90, 45, 70, False)   # Front-Left
             step_leg(kit, 9, 10, 11, 90, 120, 120) # Back-Right
             step_leg(kit, 3, 4, 5,  90, 120, 100)  # Front-Right
-            step_leg(kit, 6, 7, 8,  90, 45, 70)    # Back-Left
+            step_leg(kit, 6, 7, 8,  90, 45, 70, False)    # Back-Left
 
         
     if text == '1':
