@@ -90,8 +90,7 @@ while end:
         kit.servo[2].angle = 120
         
     if text == 'w':
-        print("Walking")
-        text = e 
+        print("Walking") 
         #fl
         kit.servo[3].angle = 90
         kit.servo[4].angle = 45
@@ -129,5 +128,18 @@ while end:
         kit.servo[10].angle = None
         kit.servo[11].angle = None 
     if text == 'q':
+        print("Disengaging")
+        kit.servo[0].angle = None
+        kit.servo[1].angle = None
+        kit.servo[2].angle = None
+        kit.servo[3].angle = None
+        kit.servo[4].angle = None
+        kit.servo[5].angle = None
+        kit.servo[6].angle = None
+        kit.servo[7].angle = None
+        kit.servo[8].angle = None
+        kit.servo[9].angle = None
+        kit.servo[10].angle = None
+        kit.servo[11].angle = None
         print("Ending Program")
         end = False
