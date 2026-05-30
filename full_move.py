@@ -26,21 +26,21 @@ def step_leg(kit, top, mid, bot, top_stand, mid_stand, bot_stand, forward=True):
     time.sleep(0.15)
 def stand():
     #top
-        kit.servo[0].angle = 90
-        kit.servo[3].angle = 90
-        kit.servo[6].angle = 90
-        kit.servo[9].angle = 90
-        #mid
-        kit.servo[1].angle = 45
-        kit.servo[4].angle = 120
-        kit.servo[7].angle = 45
-        kit.servo[10].angle = 120
-        #bottom
-        kit.servo[2].angle = 70
-        kit.servo[5].angle = 100
-        kit.servo[8].angle = 70
-        kit.servo[11].angle = 120
-        stand = True
+    kit.servo[0].angle = 90
+    kit.servo[3].angle = 90
+    kit.servo[6].angle = 90
+    kit.servo[9].angle = 90
+    #mid
+    kit.servo[1].angle = 45
+    kit.servo[4].angle = 120
+    kit.servo[7].angle = 45
+    kit.servo[10].angle = 120
+    #bottom
+    kit.servo[2].angle = 70
+    kit.servo[5].angle = 100
+    kit.servo[8].angle = 70
+    kit.servo[11].angle = 120
+    stand = True
 
 while end:
     text = input()
@@ -93,6 +93,23 @@ while end:
         kit.servo[0].angle = 100
         kit.servo[1].angle = 150
         kit.servo[2].angle = 120
+
+    if text == 'c':
+        print("Cocking Head")
+        #front stand pos
+        kit.servo[0].angle = 90
+        kit.servo[3].angle = 90
+        kit.servo[1].angle = 45
+        kit.servo[4].angle = 120
+        kit.servo[2].angle = 70
+        kit.servo[5].angle = 100
+        
+        kit.servo[6].angle = 90
+        kit.servo[9].angle = 90
+        kit.servo[7].angle = 0
+        kit.servo[10].angle = 130
+        kit.servo[8].angle = 90
+        kit.servo[11].angle = 80
 
     if text == 'w':
         print("Walking")
