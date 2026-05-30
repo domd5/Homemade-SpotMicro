@@ -95,10 +95,13 @@ while end:
         print("Walking")
         kit.servo[5].angle = 70
         kit.servo[8].angle = 100
+        time.sleep(0.2)
+        #start loop
         kit.servo[4].angle = 70
         kit.servo[7].angle = 95
+
         kit.servo[5].angle = 140
-        kit.servo[8].angle = 150
+        kit.servo[8].angle = 30
 
     if text == 'a':
         print("Walking Forward")
