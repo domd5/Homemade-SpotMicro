@@ -94,8 +94,11 @@ while end:
     if text == 'w' and stand == True:
         print("Walking")
         kit.servo[5].angle = 70
+        kit.servo[8].angle = 100
         kit.servo[4].angle = 70
+        kit.servo[7].angle = 95
         kit.servo[5].angle = 140
+        kit.servo[8].angle = 150
 
     if text == 'a':
         print("Walking Forward")
